@@ -73,6 +73,22 @@ public class MainDrive {
 		winNumbers[4] = 14;
 		winNumbers[5] = 15;
 		
+//		Bubble sort
+		for (int i = 0; i < winNumbers.length; i++) {
+			
+			for (int j = 0; j < winNumbers.length - 1; j++) {
+			
+				if (winNumbers[j] > winNumbers[j+1]) {
+					int backUp = winNumbers[j];
+					
+					winNumbers[j] = winNumbers[j+1];
+					
+					winNumbers[j+1] = backUp;
+				}
+				
+			}				
+		}
+		
 //		내 숫자가 당첨 숫자들 사이에 있는가?
 		int correctCount = 0;
 		
