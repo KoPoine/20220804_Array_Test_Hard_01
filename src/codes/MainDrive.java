@@ -65,9 +65,51 @@ public class MainDrive {
 			}
 		}
 		
+//		내 숫자가 당첨 숫자들 사이에 있는가?
+		int correctCount = 0;
+		
+		for (int myNum : myNumbers) {
+			
+			for (int winNum : winNumbers) {
+			
+				if (myNum == winNum) {
+					correctCount++;
+					break;					
+				}
+				
+			}
+		}
+		
+//		당첨 등수 확인
+		if ()
+		
+		
+		
+		
+		
+		
 	}
 	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
