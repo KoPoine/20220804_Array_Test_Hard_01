@@ -65,6 +65,14 @@ public class MainDrive {
 			}
 		}
 		
+//		임시로 당첨번호 하드코딩 > 아래 로직 확인용
+		winNumbers[0] = 10;
+		winNumbers[1] = 11;
+		winNumbers[2] = 12;
+		winNumbers[3] = 13;
+		winNumbers[4] = 14;
+		winNumbers[5] = 15;
+		
 //		내 숫자가 당첨 숫자들 사이에 있는가?
 		int correctCount = 0;
 		
@@ -78,6 +86,26 @@ public class MainDrive {
 				}
 				
 			}
+		}		
+		
+//		보너스 번호를 추출
+		int bonusNum = 0;
+		while (true) {
+			int randomNum = (int) (Math.random() * 45 + 1);
+			
+			boolean isRepeat = false;
+			
+			for (int num : winNumbers) {
+				if (num == randomNum) {
+					isRepeat = true;
+					break;							
+				}
+			}
+			
+			if (!isRepeat) {
+				bonusNum = randomNum;
+				break;
+			}
 		}
 		
 //		당첨 등수 확인
@@ -87,7 +115,21 @@ public class MainDrive {
 		else if (correctCount == 5) {
 //			2등과 3등의 분기처리
 //			임시로 3등으로 진행
-			System.out.println("축 당첨 - 3등");
+			boolean isBonusCorrect = false;
+			
+			for (int myNum : myNumbers) {
+				if (myNum == bonusNum) {
+					isBonusCorrect = true;
+					break;
+				}
+			}
+			
+			if (isBonusCorrect) {
+				System.out.println("축 당첨 - 2등");
+			}
+			else {
+				System.out.println("축 당첨 - 3등");	
+			}			
 		}
 		else if (correctCount == 4) {
 			System.out.println("축 당첨 - 4등");
