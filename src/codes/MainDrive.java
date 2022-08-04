@@ -81,7 +81,24 @@ public class MainDrive {
 		}
 		
 //		당첨 등수 확인
-		if ()
+		if (correctCount == 6) {
+			System.out.println("축 당첨 - 1등");
+		}
+		else if (correctCount == 5) {
+//			2등과 3등의 분기처리
+//			임시로 3등으로 진행
+			System.out.println("축 당첨 - 3등");
+		}
+		else if (correctCount == 4) {
+			System.out.println("축 당첨 - 4등");
+		}
+		else if (correctCount == 3) {
+			System.out.println("축 당첨 - 5등");
+		}
+		else {
+			System.out.println("낙첨되었습니다.");
+		}
+			
 		
 		
 		
