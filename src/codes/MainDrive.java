@@ -10,8 +10,7 @@ public class MainDrive {
 		
 		int[] myNumbers = new int [6];
 		
-		for (int i = 0; i < 6; i ++) {
-			
+		for (int i = 0; i < myNumbers.length; i ++) {			
 			
 			while (true) {
 				System.out.print((i + 1) + "번째 숫자 입력 : ");
@@ -40,6 +39,30 @@ public class MainDrive {
 				
 			}
 			
+		}
+		
+//		당첨 숫자 뽑기
+		int[] winNumbers = new int[6];
+		
+		for (int i = 0; i < winNumbers.length; i++) {
+			while(true) {
+				int randomNum = (int) (Math.random() * 45 + 1);  // Math.random의 범위 : 0 < double < 1
+				
+				boolean isRepeat = false;
+				
+				for (int num : winNumbers) {
+					if (num == randomNum) {
+						isRepeat = true;
+						break;
+					}
+				}
+				
+				if (!isRepeat) {
+					winNumbers[i] = randomNum;
+					break;
+				}
+				
+			}
 		}
 		
 	}
